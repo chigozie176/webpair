@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALASTOR-MD | WhatsApp Bot Pairing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/whatsapp--v1.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fab fa-whatsapp"></i>
+                <span>ALASTOR-MD</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="#pair"><i class="fas fa-link"></i> Pair Device</a>
+                <a href="#contact"><i class="fas fa-headset"></i> Support</a>
+                <a href="#credits"><i class="fas fa-code"></i> Credits</a>
+                <div class="dropdown">
+                    <a href="#"><i class="fas fa-share-alt"></i> Follow Us</a>
+                    <div class="dropdown-content">
+                        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1><i class="fab fa-whatsapp"></i> ALASTOR-MD Pairing</h1>
+                <p>Connect Your WhatsApp to ALASTOR-MD Bot</p>
+                <p class="hero-subtitle">Supports WhatsApp numbers from ALL countries</p>
+                <button class="cta-button" onclick="scrollToPair()">
+                    <i class="fas fa-bolt"></i> Start Pairing Now
+                </button>
+            </div>
+        </section>
+
+        <!-- Pairing Section -->
+        <section class="pairing-section" id="pair">
+            <h2><i class="fas fa-key"></i> Pair Your Device</h2>
+            <p class="section-subtitle">Enter your WhatsApp number with country code</p>
+            
+            <div class="pairing-card">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Enter Your Number</h3>
+                    
+                    <div class="country-selector">
+                        <label for="countryCode"><i class="fas fa-globe"></i> Country Code</label>
+                        <select id="countryCode" class="country-code-select">
+                            <option value="1">🇺🇸 +1 (USA/Canada)</option>
+                            <option value="44">🇬🇧 +44 (UK)</option>
+                            <option value="91">🇮🇳 +91 (India)</option>
+                            <option value="234" selected>🇳🇬 +234 (Nigeria)</option>
+                            <option value="233">🇬🇭 +233 (Ghana)</option>
+                            <option value="254">🇰🇪 +254 (Kenya)</option>
+                            <option value="255">🇹🇿 +255 (Tanzania)</option>
+                            <option value="256">🇺🇬 +256 (Uganda)</option>
+                            <option value="27">🇿🇦 +27 (South Africa)</option>
+                            <option value="20">🇪🇬 +20 (Egypt)</option>
+                            <option value="62">🇮🇩 +62 (Indonesia)</option>
+                            <option value="55">🇧🇷 +55 (Brazil)</option>
+                            <option value="52">🇲🇽 +52 (Mexico)</option>
+                            <option value="34">🇪🇸 +34 (Spain)</option>
+                            <option value="33">🇫🇷 +33 (France)</option>
+                            <option value="49">🇩🇪 +49 (Germany)</option>
+                            <option value="39">🇮🇹 +39 (Italy)</option>
+                            <option value="7">🇷🇺 +7 (Russia)</option>
+                            <option value="81">🇯🇵 +81 (Japan)</option>
+                            <option value="82">🇰🇷 +82 (South Korea)</option>
+                            <option value="86">🇨🇳 +86 (China)</option>
+                            <option value="65">🇸🇬 +65 (Singapore)</option>
+                            <option value="60">🇲🇾 +60 (Malaysia)</option>
+                            <option value="63">🇵🇭 +63 (Philippines)</option>
+                            <option value="61">🇦🇺 +61 (Australia)</option>
+                            <option value="64">🇳🇿 +64 (New Zealand)</option>
+                            <option value="971">🇦🇪 +971 (UAE)</option>
+                            <option value="966">🇸🇦 +966 (Saudi Arabia)</option>
+                            <option value="90">🇹🇷 +90 (Turkey)</option>
+                            <option value="92">🇵🇰 +92 (Pakistan)</option>
+                            <option value="880">🇧🇩 +880 (Bangladesh)</option>
+                            <option value="93">🇦🇫 +93 (Afghanistan)</option>
+                            <option value="98">🇮🇷 +98 (Iran)</option>
+                            <option value="212">🇲🇦 +212 (Morocco)</option>
+                            <option value="213">🇩🇿 +213 (Algeria)</option>
+                            <option value="216">🇹🇳 +216 (Tunisia)</option>
+                            <option value="other">Other Country Code</option>
+                        </select>
+                        
+                        <div class="custom-code-container" id="customCodeContainer" style="display: none;">
+                            <label for="customCountryCode"><i class="fas fa-edit"></i> Enter Custom Code</label>
+                            <div class="custom-input-group">
+                                <span class="custom-prefix">+</span>
+                                <input type="text" id="customCountryCode" placeholder="Country code" maxlength="5">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="phone-input-container">
+                        <label for="phoneInput"><i class="fas fa-mobile-alt"></i> Phone Number</label>
+                        <div class="input-group">
+                            <div class="prefix" id="dynamicPrefix">+234</div>
+                            <input type="text" id="phoneInput" placeholder="8012345678" maxlength="15">
+                        </div>
+                        <small class="input-hint">Enter your phone number without country code</small>
+                    </div>
+                    
+                    <button class="btn-generate" onclick="generateCode()">
+                        <i class="fas fa-key"></i> Generate 8-Digit Code
+                    </button>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Your 8-Digit Pairing Code</h3>
+                    <div class="code-display" id="codeDisplay">
+                        <span id="codeText">XXXXXXXX</span>
+                        <small id="expiryText">Expires in: --:--</small>
+                        <div class="full-number" id="fullNumberDisplay"></div>
+                        <div class="code-hint">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Send this code to: <strong>DEMO-NXMD</strong></span>
+                        </div>
+                    </div>
+                    <button class="btn-copy" onclick="copyCode()">
+                        <i class="far fa-copy"></i> Copy 8-Digit Code
+                    </button>
+                    <div class="instruction-box">
+                        <h4><i class="fas fa-robot"></i> How to Pair:</h4>
+                        <ol>
+                            <li>Open WhatsApp on your phone</li>
+                            <li>Send this exact message to <strong>DEMO-NXMD</strong>:</li>
+                            <li class="send-command">
+                                <code>!pair <span id="commandCode">XXXXXXXX</span></code>
+                                <button class="btn-copy-small" onclick="copyCommand()">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </li>
+                            <li>Wait for confirmation message from bot</li>
+                            <li>Start using ALASTOR-MD features!</li>
+                        </ol>
+                        <div class="bot-info">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>Bot Name:</strong> DEMO-NXMD<br>
+                                <strong>Code Format:</strong> 8-digit numeric<br>
+                                <strong>Valid for:</strong> 10 minutes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connection Status</h3>
+                    <div class="status-box">
+                        <div class="status-indicator">
+                            <div class="dot" id="statusDot"></div>
+                            <span id="statusText">Ready</span>
+                        </div>
+                        <p id="statusMessage">Enter your number to generate 8-digit code</p>
+                        
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        
+                        <div class="status-details">
+                            <div class="detail">
+                                <i class="far fa-clock"></i>
+                                <span>Code Valid: <strong id="validTime">--:--</strong></span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-user-check"></i>
+                                <span>Paired Users: <strong id="pairedCount">0</strong></span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-globe"></i>
+                                <span>Country: <strong id="countryName">--</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="connection-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>After pairing, use <code>!menu</code> to see all commands</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2><i class="fas fa-headset"></i> Contact & Support</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Developer</h3>
+                    <p>Dark Codex Empire</p>
+                    <p class="watermark">by CODEBREAKER</p>
+                    <div class="dev-tags">
+                        <span class="tag">ALASTOR-MD Creator</span>
+                        <span class="tag">WhatsApp Bot Expert</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp Support</h3>
+                    <p>Global Support Available</p>
+                    <small>All timezones supported</small>
+                    <div class="support-info">
+                        <i class="fas fa-robot"></i>
+                        <span>Bot: DEMO-NXMD</span>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Multi-language</h3>
+                    <p>English & Local Support</p>
+                    <small>Multiple languages available</small>
+                    <div class="lang-tags">
+                        <span class="lang-tag">English</span>
+                        <span class="lang-tag">हिन्दी</span>
+                        <span class="lang-tag">Español</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credits Section -->
+        <section class="credits-section" id="credits">
+            <h2><i class="fas fa-star"></i> Credits & Links</h2>
+            <div class="social-links">
+                <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i> WhatsApp Channel</a>
+                <a href="#" class="social-btn"><i class="fab fa-telegram"></i> Telegram Group</a>
+                <a href="#" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="social-btn"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="#" class="social-btn"><i class="fab fa-tiktok"></i> TikTok</a>
+                <a href="#" class="social-btn"><i class="fas fa-users"></i> Community</a>
+            </div>
+            
+            <div class="feature-highlights">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Secure Pairing</h4>
+                    <p>8-digit encrypted codes</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Fast Connection</h4>
+                    <p>Instant WhatsApp linking</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-globe-americas"></i>
+                    <h4>Global Support</h4>
+                    <p>All countries supported</p>
+                </div>
+            </div>
+            
+            <div class="footer-watermark">
+                <i class="fas fa-code"></i>
+                <span>Dark Codex Empire by CODEBREAKER</span>
+                <small class="global-tag">🌍 ALASTOR-MD WhatsApp Bot System</small>
+                <div class="version">v2.0.0 • 8-Digit Pairing</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

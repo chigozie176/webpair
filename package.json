@@ -1,0 +1,13 @@
+{
+  "name": "alastor-md-pairing",
+  "version": "1.0.0",
+  "description": "ALASTOR-MD WhatsApp Bot Pairing System",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
